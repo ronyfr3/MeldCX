@@ -48,7 +48,7 @@ const Devices = () => {
       },
     })
       .then(function () {
-        history.push("/");
+        console.log("success");
       })
       .catch(function (error) {
         console.log(error);
