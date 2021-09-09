@@ -1,0 +1,177 @@
+@mixin flex($dir, $align, $content) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $content;
+}
+
+@mixin btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #009ccb;
+  @include font-size($p-font-sizes);
+  padding: 9px 20px 9px 20px;
+  border-radius: 4px;
+  box-shadow: $shadow1;
+  color: white;
+}
+
+// MIXIN FOR max-width:480px
+@mixin media-480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// phone-only=P
+// tablet-portrait-up=TP
+// tablet-landscape-up=TL
+// desktop-up=D
+// big-desktop-up=BD
+@mixin media($size) {
+  @if $size == P {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == TP {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == TL {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == D {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == BG {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+// FLUID FONT SIZES
+
+$breakpoints: (
+  320: 320px,
+  375: 375px,
+  425: 425px,
+  768: 768px,
+  1024: 1024px,
+  1440: 1440px,
+  2560: 2560px,
+);
+
+$p-font-sizes: (
+  320: (
+    15px,
+    1.5,
+  ),
+  375: (
+    15px,
+    1.5,
+  ),
+  425: (
+    15px,
+    1.5,
+  ),
+  768: (
+    16px,
+    1.6,
+  ),
+  1024: (
+    16px,
+    1.5,
+  ),
+  1440: (
+    18px,
+    1.5,
+  ),
+  2560: (
+    30px,
+    1.6,
+  ),
+);
+
+$h1-font-sizes: (
+  320: (
+    18px,
+    1.3,
+  ),
+  375: (
+    20px,
+    1.3,
+  ),
+  425: (
+    22px,
+    1.3,
+  ),
+  768: (
+    24px,
+    1.5,
+  ),
+  1024: (
+    28px,
+    1.5,
+  ),
+  1440: (
+    34px,
+    1.5,
+  ),
+  2560: (
+    56px,
+    1.5,
+  ),
+);
+$h2-font-sizes: (
+  320: (
+    16px,
+  ),
+  375: (
+    17px,
+  ),
+  425: (
+    20px,
+  ),
+  768: (
+    22px,
+  ),
+  1024: (
+    26px,
+  ),
+  1440: (
+    30px,
+  ),
+  2560: (
+    35px,
+  ),
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    } @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+@mixin make-font-size($fs-font-size) {
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  } @else {
+    font-size: $fs-font-size;
+  }
+}

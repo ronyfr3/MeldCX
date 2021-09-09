@@ -1,0 +1,81 @@
+//FONT_FAMILY
+$fontFamily: "Roboto Condensed", sans-serif;
+$fontFamily2: "Arimo", sans-serif;
+
+$border: 1px solid red;
+
+// BOX_SHADOW
+// ALL SIDED
+$shadow1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow3: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow4: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$shadow5: 0.5px 0.5px 15px 0.5px rgb(219, 219, 219);
+$shadow6: 1px 1px 15px 1px rgb(219, 219, 219);
+$shadow7: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$shadow8: 0.2px 0.2px 3px 0.6px rgb(219, 219, 219);
+// TOP SIDED
+$shdaowtop: 0 -5px 5px -5px #333;
+$shdaowright: 5px 0 5px -5px #333;
+$shdaowbottom: 0 5px 5px -5px #333;
+$shdaowleft: -5px 0 5px -5px #333;
+// TWO SIDED
+$shadowlr: -5px 0 5px -5px #333, 5px 0 5px -5px #333;
+$shadowtb: 0 -5px 5px -5px #333, 0 5px 5px -5px #333;
+$shadowtr: 5px -5px 5px -5px #333;
+$shadowtl: -5px -5px 5px -5px #333;
+$shadowbr: 5px 5px 5px -5px #333;
+$shadowbl: -5px 5px 5px -5px #333;
+// THREE SIDED
+$shadowtbr: 0 -5px 5px -5px #333, 0 5px 5px -5px #333, 5px 0 5px -5px #333;
+$shadowtbl: 0 -5px 5px -5px #333, 0 5px 5px -5px #333, -5px 0 5px -5px #333;
+$shadowtlr: 0 -5px 5px -5px #333, -5px 0 5px -5px #333, 5px 0 5px -5px #333;
+$shadowblr: 0 5px 5px -5px #333, -5px 0 5px -5px #333, 5px 0 5px -5px #333;
+
+// TEXT SHADOW
+$ts1: 0px 0px 0 rgb(137, 156, 213), 1px 1px 0 rgb(129, 148, 205),
+  2px 2px 0 rgb(120, 139, 196), 3px 3px 0 rgb(111, 130, 187),
+  4px 4px 0 rgb(103, 122, 179), 5px 5px 0 rgb(94, 113, 170),
+  6px 6px 0 rgb(85, 104, 161), 7px 7px 0 rgb(76, 95, 152),
+  8px 8px 0 rgb(68, 87, 144), 9px 9px 0 rgb(59, 78, 135),
+  10px 10px 0 rgb(50, 69, 126), 11px 11px 0 rgb(42, 61, 118),
+  12px 12px 0 rgb(33, 52, 109), 13px 13px 0 rgb(24, 43, 100),
+  14px 14px 0 rgb(15, 34, 91), 15px 15px 0 rgb(7, 26, 83),
+  16px 16px 0 rgb(-2, 17, 74), 17px 17px 0 rgb(-11, 8, 65),
+  18px 18px 0 rgb(-19, 0, 57), 19px 19px 0 rgb(-28, -9, 48),
+  20px 20px 0 rgb(-37, -18, 39), 21px 21px 20px rgba(0, 0, 0, 1),
+  21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(0, 0, 0, 0.2);
+$ts2: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee,
+  3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee,
+  5px 4px 1px #ccc, 4px 5px 1px #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee,
+  7px 6px 1px #ccc;
+$ts3: 0 1px 0 rgba(255, 255, 255, 0.4);
+$ts4: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+  0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+  0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+  0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+  0 20px 20px rgba(0, 0, 0, 0.15);
+$ts5: 1px 0px 1px #ccc, 1px 3px 1px #ccc, 1px 1px 1px #ccc, 1px 1px 1px #eee,
+  1px 1px 1px #ccc, 1px 2px 1px #eee, 1px 1px 1px #ccc, 1px 1px 1px #eee,
+  1px 1px 1px #ccc, 1px 2px 1px #eee, 1px 1px 1px #ccc, 1px 1px 1px #eee,
+  1px 1px 1px #ccc;
+
+// COLORS
+$c1: #1c343c;
+$c2: #756350;
+$c3: #d8b4c3;
+$c4: #056370;
+$c5: #39777c;
+$c6: #c0726c;
+$c7: #f1d891;
+$c8: #34ace0;
+$c9: #1e7961;
+$c10: #ff5252;
+$c11: #13192c;
+$c12: #151522;
+$c13: #1d1f2e;
+$c14: #262c47;
+$c15: #32619d;
+$c16: #dbca90;
+$c17: #e6ca6d;
+$c18: #df8046;
