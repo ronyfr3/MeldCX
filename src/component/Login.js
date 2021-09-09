@@ -23,13 +23,13 @@ const Login = () => {
     email: state.email,
     password: "meld123",
   };
-  console.log(inputValue);
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://35.201.2.209:8000/login", inputValue, config)
       .then((response) => {
         localStorage.setItem("auth", JSON.stringify(response.data));
+        localStorage.setItem("userEmail", JSON.stringify(state.email));
         history.push("/devices");
       });
     setState({

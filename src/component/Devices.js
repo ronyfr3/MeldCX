@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getDevices } from "../redux/action";
 import Axios from "axios";
 
 const Devices = () => {
+  const [send, setSend] = useState(false);
   const state = useSelector((state) => state.deviceState);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -33,7 +34,7 @@ const Devices = () => {
   const access_token = JSON.parse(localStorage.getItem("auth"));
   const user = {
     name: "Abdur Rakib Rony",
-    email: "rakib.fstackdev@gmail.com",
+    email: JSON.parse(localStorage.getItem("userEmail")),
     repoUrl: "https://github.com/ronyfr3/MeldCX",
     message: "Task Done",
   };
@@ -48,7 +49,10 @@ const Devices = () => {
       },
     })
       .then(function () {
-        console.log("success");
+        setSend(true);
+        setTimeout(() => {
+          setSend(false);
+        }, 4000);
       })
       .catch(function (error) {
         console.log(error);
@@ -65,7 +69,7 @@ const Devices = () => {
       <div id="dot-container"></div>
       <div className="btns">
         <button className="notify" onClick={sendNotify}>
-          Notify
+          {send ? " send" : " Notify"}
         </button>
         <button className="logout" onClick={logout}>
           log out
